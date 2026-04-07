@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshMarket - Inventory</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <h1>Fruver</h1>
+    <p>Inventory Manager</p>
+</header>
+
+<main>
+    <section class="form-card">
+        <h2 id="form-title">Add Product</h2>
+        <div class="form-row">
+            <input type="hidden" id="productId"/>
+            <input type="text" id="name" placeholder="Product name" />
+            <select id="category">
+                <option value="">Select category</option>
+                <option value="Fruits">Fruits</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Tubers">Tubers</option>
+                <option value="Herbs">Herbs</option>
+            </select>
+            <input type="number" id="price" placeholder="Price per kg" />
+            <input type="number" id="quantity" placeholder="Stock (kg)" />
+            <button onclick="saveProduct()">Add</button>
+            <button class="cancel" id="cancelBtn" onclick="cancelEdit()" style="display:none">Cancel</button>
+        </div>
+    </section>
+
+    <div class="alert-banner" id="alertBanner">
+        Low stock alert — the following products need restocking:
+        <ul id="alertList"></ul>
+    </div>
+
+    <section class="table-section">
+        <h2>Products</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price / kg</th>
+                <th>Stock (kg)</th>
+                <th>Actions</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody id="productList"></tbody>
+        </table>
+    </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
